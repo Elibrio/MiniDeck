@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws MidiUnavailableException {
         //Only for forks
-        final MiniDeck deck = new MiniDeck();
+        //final MiniDeck deck = new MiniDeck();
     }
 
 }

@@ -1,5 +1,6 @@
 package main;
 
+import managers.ButtonManager;
 import managers.EventHandler;
 import obj.Button;
 import util.MidiUtil;
@@ -48,6 +49,8 @@ public class MiniDeck {
 
         eventHandler = new EventHandler();
         deckOut.getTransmitter().setReceiver(eventHandler);
+
+        ButtonManager.resetButtons();
     }
 
     public void send(Button b) {

@@ -1,8 +1,8 @@
 package obj;
 
-import data.ButtonState;
 import data.ButtonType;
 import data.Color;
+import main.MiniDeck;
 
 public class Button {
     private final DeckPoint point;
@@ -30,14 +30,14 @@ public class Button {
 
     public void setColor(Color color) {
         this.color = color;
-
+        MiniDeck.getInstance().send(this);
     }
 
-    public ButtonState getButtonState() {
-        return buttonState;
+    public boolean isDown() {
+        return down;
     }
 
-    public void setButtonState(ButtonState buttonState) {
-        this.buttonState = buttonState;
+    public void setDown(boolean down) {
+        this.down = down;
     }
 }

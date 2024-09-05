@@ -1,3 +1,4 @@
+package main;
 
 import managers.EventHandler;
 import obj.Button;

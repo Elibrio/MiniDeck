@@ -5,6 +5,7 @@ import data.events.DeckListener;
 import data.events.FaderEvent;
 import obj.Button;
 import obj.DeckPoint;
+import obj.Fader;
 
 import javax.sound.midi.MidiMessage;
 import javax.sound.midi.Receiver;
@@ -30,15 +31,19 @@ public class EventHandler implements Receiver {
         final int deckObjValue = msg[2];
 
         if(deckObjAction == -80) {
-            listeners.forEach(l -> l.onFader(new FaderEvent(deckObj, deckObjValue)));
+            final Fader fader = ButtonManager.getFader(new DeckPoint(deckObj));
+            fader.setValue(deckObjValue);
+            listeners.forEach(l -> l.onFader(new FaderEvent(fader)));
             return;
         }
-        listeners.forEach(l -> l.onButton(new ButtonEvent(new Button(new DeckPoint(deckObj)), deckObjAction == -112)));
+        final boolean down = deckObjAction == -112;
+        final Button button = ButtonManager.getButton(new DeckPoint(deckObj));
+        button.setDown(down);
+        listeners.forEach(l -> l.onButton(new ButtonEvent(button, down)));
     }
 
     @Override
     public void close() {
         unregisterListeners();
-        close();
     }
 }

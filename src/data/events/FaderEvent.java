@@ -1,3 +1,5 @@
 package data.events;
 
-public record FaderEvent(int fader, int value) {}
+import obj.Fader;
+
+public record FaderEvent(Fader fader) {}

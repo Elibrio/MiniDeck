@@ -1,3 +1,5 @@
+import main.MiniDeck;
+
 import javax.sound.midi.MidiUnavailableException;
 
 public class Main {

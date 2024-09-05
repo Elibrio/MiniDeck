@@ -33,7 +33,7 @@ public class EventHandler implements Receiver {
             listeners.forEach(l -> l.onFader(new FaderEvent(deckObj, deckObjValue)));
             return;
         }
-        listeners.forEach(l -> l.onButton(new ButtonEvent(new Button(new DeckPoint(deckObj)), deckObjValue == -112)));
+        listeners.forEach(l -> l.onButton(new ButtonEvent(new Button(new DeckPoint(deckObj)), deckObjAction == -112)));
     }
 
     @Override

@@ -17,10 +17,10 @@ public enum Color {
         this.color = color;
     }
 
-    public static Color getColor(int color){
+    public static Color getValue(int color){
         return Arrays.stream(values()).filter(c -> c.color == color).findFirst().orElse(Color.OFF);
     }
-    public int getColor() {
+    public int getValue() {
         return color;
     }
 }

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MiniDeck:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MiniDeck_jar</output-path>
+    <root id="archive" name="MiniDeck.jar">
+      <element id="module-output" name="MiniDeck" />
+    </root>
+  </artifact>
+</component>
